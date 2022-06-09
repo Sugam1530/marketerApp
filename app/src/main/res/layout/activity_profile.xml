@@ -140,8 +140,7 @@
         app:backgroundTint="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="#1bda9a"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_mane"
-        android:layout_marginTop="240dp"/>
+        android:layout_marginTop="120dp"
+        app:menu="@menu/navigation_mane" />
 
 </LinearLayout>
