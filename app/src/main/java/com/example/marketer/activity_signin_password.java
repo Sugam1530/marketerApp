@@ -43,11 +43,7 @@ public class activity_signin_password extends AppCompatActivity {
         passwordText = findViewById(R.id.password);
 
         loginbtn.setOnClickListener(v -> {
-            String cacheUsername = userNameText.getText().toString();
-            SharedPreferences.Editor editor = sharedPreferences.edit() ;
-            editor.putString("uName",cacheUsername) ;
-            editor.putBoolean("userLoggedInFlag", true) ;
-            editor.apply();
+
             if (!userNameText.getText().toString().isEmpty() &&
                     !passwordText.getEditText().getText().toString().isEmpty()) {
                 final RequestBody userName = RequestBody.create(MediaType.parse("text/plain"), userNameText.getText().toString());

@@ -23,8 +23,8 @@ public class splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferencesUserSpecific = getSharedPreferences("userName", Context.MODE_PRIVATE);
-                if(sharedPreferencesUserSpecific.getBoolean("userLoggedInFlag", false))
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(splash_screen.this);
+                if(sharedPreferences.getBoolean("userLoggedInFlag", false))
                 {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
