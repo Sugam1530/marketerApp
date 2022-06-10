@@ -2,6 +2,7 @@ package com.example.marketer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,16 +23,14 @@ public class splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(splash_screen.this);
-                if(sharedPreferences.getBoolean("userLoggedInFlag", false))
+                SharedPreferences sharedPreferencesUserSpecific = getSharedPreferences("userName", Context.MODE_PRIVATE);
+                if(sharedPreferencesUserSpecific.getBoolean("userLoggedInFlag", false))
                 {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
-                else if (launcherManager.isFirstTime()){
+                else {
                     startActivity(new Intent(getApplicationContext(), activity_signin_password.class));
 
-                } else {
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
 
             }

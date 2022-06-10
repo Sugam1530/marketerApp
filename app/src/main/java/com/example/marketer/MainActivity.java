@@ -3,17 +3,23 @@ package com.example.marketer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout layoutWalletbalance, layoutfarmerList, farmerProfile;
+    SharedPreferences sharedPreferences;
+    TextView userName;
+    public static final String userNameKey = "userName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         layoutWalletbalance = findViewById(R.id.layoutWalletbalance);
         layoutfarmerList = findViewById(R.id.layoutfarmerList);
         farmerProfile = findViewById(R.id.farmerProfile);
-
+        userName = findViewById(R.id.userName);
+        SharedPreferences sharedPreferences = getSharedPreferences(userNameKey, Context.MODE_PRIVATE);
+        userName.setText(sharedPreferences.getString("uName",""));
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
 
         bottomNavigationView.setSelectedItemId(R.id.menuHome);
