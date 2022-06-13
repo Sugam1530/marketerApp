@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/splashPhoto"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:src="@drawable/farming_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

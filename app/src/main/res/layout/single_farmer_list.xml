@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/farmerProfile"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="140dp"
         android:layout_margin="10dp"
         android:background="@drawable/singlefrontview"
         android:orientation="horizontal"
@@ -39,13 +39,25 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/farmerId"
+                android:id="@+id/farmerEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Farmer Id"
+                android:text="Farmer Email"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/farmerWalletBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wallet Balance"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginStart="10dp"
+                android:layout_margin="10dp"
                 android:textSize="15sp"/>
 
         </LinearLayout>

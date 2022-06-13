@@ -13,6 +13,9 @@ public interface ApiInterface {
 @GET("api/marketer/getmarkerterprofile/{num}")
     Call<ResponseArrayMarketerProfileOverview> getMarketerProfile(@Path("num") int num);
 
+@GET("api/marketer/getallfarmer")
+    Call<ResponseArrayFarmerOverview> getAllFarmerList();
+
 @Multipart
 @POST("api/marketer/login")
     Call<ResponseArrayMarketerLoginOverview> postMarketerLogin(@Part("username") RequestBody username, @Part("password") RequestBody password);
