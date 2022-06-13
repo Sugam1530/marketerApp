@@ -7,19 +7,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout layoutWalletbalance, layoutfarmerList, farmerProfile;
     SharedPreferences sharedPreferences;
-    TextView userName;
+    TextView userName, walletAmount;
     public static final String userNameKey = "userName";
+    ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +37,29 @@ public class MainActivity extends AppCompatActivity {
         layoutfarmerList = findViewById(R.id.layoutfarmerList);
         farmerProfile = findViewById(R.id.farmerProfile);
         userName = findViewById(R.id.userName);
+        walletAmount = findViewById(R.id.walletAmount);
+
         SharedPreferences sharedPreferences = getSharedPreferences(userNameKey, Context.MODE_PRIVATE);
         userName.setText(sharedPreferences.getString("uName",""));
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
+        apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
+
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        String userId = preferences.getString("userId", "");
+        apiInterface.getMarketerProfile(Integer.parseInt(userId)).enqueue(new Callback<ResponseArrayMarketerProfileOverview>() {
+            @Override
+            public void onResponse(Call<ResponseArrayMarketerProfileOverview> call, Response<ResponseArrayMarketerProfileOverview> response) {
+                if (response.body() != null && response.body().getResponse() != null){
+                    walletAmount.setText(response.body().getResponse().getWallet_balance());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayMarketerProfileOverview> call, Throwable t) {
+                Toast.makeText(MainActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         bottomNavigationView.setSelectedItemId(R.id.menuHome);
 
