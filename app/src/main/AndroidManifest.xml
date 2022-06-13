@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Marketer"
         tools:targetApi="31">
         <activity
+            android:name=".activity_add_farmer"
+            android:exported="false" />
+        <activity
             android:name=".activity_transaction_history"
             android:exported="false" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".splash_screen"
             android:exported="true">

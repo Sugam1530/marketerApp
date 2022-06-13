@@ -24,10 +24,22 @@
             android:gravity="center"
             android:text="Farmer List"
             android:textColor="@color/black"
+            android:layout_marginStart="50dp"
             android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/textAddFarmer"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="+ Add Farmer"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textFarmerList"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -44,8 +56,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="@+id/farmingLayoutHeader"
-        android:background="#f7f7f7">
+        app:layout_constraintBottom_toBottomOf="@+id/farmingLayoutHeader">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
