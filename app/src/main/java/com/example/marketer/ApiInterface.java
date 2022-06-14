@@ -19,4 +19,8 @@ public interface ApiInterface {
 @Multipart
 @POST("api/marketer/login")
     Call<ResponseArrayMarketerLoginOverview> postMarketerLogin(@Part("username") RequestBody username, @Part("password") RequestBody password);
+
+@Multipart
+@POST("api/marketer/addfarmer")
+    Call<AddFarmerOverview> postAddFarmer(@Part ("name") RequestBody name, @Part("email") RequestBody email, @Part("username") RequestBody username, @Part("password") RequestBody password, @Part("cnfm_password") RequestBody cnfm_password, @Part("mkt_id") RequestBody mkt_id);
 }

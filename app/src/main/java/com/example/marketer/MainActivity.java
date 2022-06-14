@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout layoutWalletbalance, layoutfarmerList, farmerProfile;
     SharedPreferences sharedPreferences;
-    TextView userName, walletAmount;
+    TextView userName, walletAmount, marketerName, marketerEmail;
     public static final String userNameKey = "userName";
     ApiInterface apiInterface;
 
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         farmerProfile = findViewById(R.id.farmerProfile);
         userName = findViewById(R.id.userName);
         walletAmount = findViewById(R.id.walletAmount);
+        marketerName = findViewById(R.id.farmerName);
+        marketerEmail = findViewById(R.id.farmerId);
 
         SharedPreferences sharedPreferences = getSharedPreferences(userNameKey, Context.MODE_PRIVATE);
         userName.setText(sharedPreferences.getString("uName",""));
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseArrayMarketerProfileOverview> call, Response<ResponseArrayMarketerProfileOverview> response) {
                 if (response.body() != null && response.body().getResponse() != null){
                     walletAmount.setText(response.body().getResponse().getWallet_balance());
+                    marketerName.setText(response.body().getResponse().getName());
+                    marketerEmail.setText(response.body().getResponse().getEmail());
                 }
             }
 
