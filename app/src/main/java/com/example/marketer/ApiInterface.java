@@ -7,6 +7,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -15,6 +16,9 @@ public interface ApiInterface {
 
 @GET("api/marketer/getsinglefarmer/{num}")
     Call<ResponseArrayFarmerOverview> getAllFarmerListbyMarketer(@Path("num") int num);
+
+@GET("api/transactions/getalltransaction?")
+    Call<ResponseArrayAllTransactionOverview> getAllTransaction(@Query("user_id") int user_id, @Query("user_type") String user_type);
 
 @Multipart
 @POST("api/marketer/login")

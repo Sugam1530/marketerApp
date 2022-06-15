@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/farmerProfile"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/singlefrontview"
         android:orientation="horizontal"
@@ -25,8 +25,9 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <TextView
                 android:id="@+id/farmerName"
@@ -44,8 +45,6 @@
                 android:layout_height="wrap_content"
                 android:text="Farmer Email"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
                 android:layout_marginStart="10dp"
                 android:textSize="15sp"/>
 
@@ -55,7 +54,6 @@
                 android:layout_height="wrap_content"
                 android:text="Wallet Balance"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_marginStart="10dp"
                 android:layout_margin="10dp"
                 android:textSize="15sp"/>

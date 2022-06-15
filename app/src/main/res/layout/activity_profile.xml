@@ -61,17 +61,17 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/black"
                 android:text="Name"/>
 
         </LinearLayout>
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/user_photo"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="80dp"
             android:padding="20dp"
             android:cropToPadding="true"
             android:requiresFadingEdge="vertical"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:text="User Name"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
 
     <TextView
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:text="Email Address"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
 
     <TextView
@@ -119,7 +119,7 @@
         android:layout_height="wrap_content"
         android:text="Wallet Balance"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
 
     <TextView
@@ -139,7 +139,7 @@
         android:backgroundTint="#1bda9a"
         app:backgroundTint="@color/white"
         app:itemIconTint="@color/black"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="265dp"
         app:itemTextColor="#1bda9a"
         app:menu="@menu/navigation_mane" />
 
