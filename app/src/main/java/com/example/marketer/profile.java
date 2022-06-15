@@ -40,7 +40,7 @@ public class profile extends AppCompatActivity {
             public void onResponse(Call<ResponseArrayMarketerProfileOverview> call, Response<ResponseArrayMarketerProfileOverview> response) {
                 if (response.body() != null && response.body().getResponse() != null){
                     tvName.setText(response.body().getResponse().getName());
-                    tvPassword.setText(response.body().getResponse().getPassword());
+                    tvPassword.setText(response.body().getResponse().getUsername());
                     tvEmail.setText(response.body().getResponse().getEmail());
                     tvWalletBalance.setText(response.body().getResponse().getWallet_balance());
                 }

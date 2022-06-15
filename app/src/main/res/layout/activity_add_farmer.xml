@@ -67,6 +67,7 @@
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
+                    android:layout_marginStart="5dp"
                     android:hint="Name"/>
 
             </LinearLayout>
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
             android:hint="Email Address"/>
@@ -89,7 +90,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
             android:hint="User Name"/>
@@ -100,7 +101,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
             android:hint="Password"/>
@@ -111,7 +112,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
             android:hint="Confirm Password"/>

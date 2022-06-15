@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="28dp"
-        android:text="User Name"
+        android:text="Marketer"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

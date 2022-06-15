@@ -13,8 +13,8 @@ public interface ApiInterface {
 @GET("api/marketer/getmarkerterprofile/{num}")
     Call<ResponseArrayMarketerProfileOverview> getMarketerProfile(@Path("num") int num);
 
-@GET("api/marketer/getallfarmer")
-    Call<ResponseArrayFarmerOverview> getAllFarmerList();
+@GET("api/marketer/getsinglefarmer/{num}")
+    Call<ResponseArrayFarmerOverview> getAllFarmerListbyMarketer(@Path("num") int num);
 
 @Multipart
 @POST("api/marketer/login")

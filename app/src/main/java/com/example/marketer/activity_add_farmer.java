@@ -71,7 +71,5 @@ public class activity_add_farmer extends AppCompatActivity {
                 Toast.makeText(this, "Please Fill All The Required Field", Toast.LENGTH_SHORT).show();
             }
         });
-
-        getSupportActionBar().hide();
     }
 }

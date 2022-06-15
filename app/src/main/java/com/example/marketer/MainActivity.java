@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         marketerEmail = findViewById(R.id.farmerId);
 
         SharedPreferences sharedPreferences = getSharedPreferences(userNameKey, Context.MODE_PRIVATE);
-        userName.setText(sharedPreferences.getString("uName",""));
+//        userName.setText(sharedPreferences.getString("uName",""));
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationMenu);
         apiInterface = RetrofitInstance.getRetrofit().create(ApiInterface.class);
 
