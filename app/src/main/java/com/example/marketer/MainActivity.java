@@ -66,6 +66,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        apiInterface.getAllFarmerListbyMarketer(Integer.parseInt(userId)).enqueue(new Callback<ResponseArrayFarmerOverview>() {
+            @Override
+            public void onResponse(Call<ResponseArrayFarmerOverview> call, Response<ResponseArrayFarmerOverview> response) {
+                if (response.body() != null){
+                    farmerNumber.setText(Integer.toString(response.body().getResponse().size()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseArrayFarmerOverview> call, Throwable t) {
+
+            }
+        });
+
         bottomNavigationView.setSelectedItemId(R.id.menuHome);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
